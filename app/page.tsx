@@ -3,11 +3,21 @@ import { LockIcon } from "./components/icons";
 export default function Home() {
   return (
     <div className="relative w-screen h-screen flex flex-col items-center justify-center">
-      {/* Top rule */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-plum/[0.12]" />
+      {/* ─── Architectural photo strip ─── */}
+      <div className="absolute top-0 left-0 right-0 h-[clamp(100px,18vh,220px)] overflow-hidden animate-fade-in">
+        <img
+          src="/strip.jpg"
+          alt=""
+          role="presentation"
+          className="w-full h-full object-cover object-center"
+          loading="eager"
+        />
+        {/* Gradient fade: strip → cream */}
+        <div className="absolute bottom-0 left-0 right-0 h-[65%] bg-gradient-to-t from-cream via-cream/85 to-transparent pointer-events-none" />
+      </div>
 
       {/* Center content */}
-      <main className="text-center px-8 max-w-2xl relative z-10">
+      <main className="text-center px-8 max-w-2xl mt-[clamp(24px,5vh,70px)] relative z-10">
         {/* The Name */}
         <h1 className="font-serif font-normal text-plum tracking-display leading-none mb-8 animate-fade-up delay-100 text-4xl sm:text-5xl md:text-6xl">
           Elsa Research
