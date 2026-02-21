@@ -45,7 +45,7 @@ export default function Home() {
           <span className="w-[3px] h-[3px] rounded-full bg-plum/20" />
 
           <a
-            href="#"
+            href="/portal"
             className="group flex items-center gap-1.5 text-xs font-sans font-normal text-plum-muted tracking-label uppercase transition-all duration-400 hover:text-plum border-b border-transparent hover:border-plum pb-0.5"
           >
             <LockIcon />

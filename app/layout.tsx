@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -11,11 +12,9 @@ export const metadata: Metadata = {
     description:
       "Bespoke advisory and technological incubation for complex corporate actions.",
     type: "website",
+    images: ["/strip.jpg"],
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
@@ -24,10 +23,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="bg-cream text-plum font-serif antialiased overflow-hidden">
-        {children}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className="bg-cream text-plum font-serif antialiased overflow-hidden">
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
