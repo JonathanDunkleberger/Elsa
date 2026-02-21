@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div className="relative w-screen h-screen flex flex-col items-center justify-center">
       {/* ─── Architectural photo strip ─── */}
-      <div className="absolute top-0 left-0 right-0 h-[clamp(100px,18vh,220px)] overflow-hidden animate-fade-in">
+      <div className="absolute top-0 left-0 right-0 h-[clamp(140px,25vh,300px)] overflow-hidden animate-fade-in">
         <img
           src="/strip.jpg"
           alt=""
