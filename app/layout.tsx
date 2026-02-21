@@ -7,12 +7,23 @@ export const metadata: Metadata = {
   description:
     "Bespoke advisory and technological incubation for complex corporate actions.",
   metadataBase: new URL("https://elsaresearch.co"),
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
     title: "Elsa Research",
     description:
       "Bespoke advisory and technological incubation for complex corporate actions.",
     type: "website",
-    images: ["/strip.jpg"],
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
   },
   robots: { index: true, follow: true },
 };

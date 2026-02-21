@@ -1,0 +1,21 @@
+{
+  "name": "Elsa Research",
+  "short_name": "Elsa",
+  "description": "Bespoke advisory and technological incubation for complex corporate actions.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F4EDE4",
+  "theme_color": "#3B2A4A",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
