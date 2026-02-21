@@ -2,7 +2,7 @@ import { LockIcon } from "./components/icons";
 
 export default function Home() {
   return (
-    <div className="relative w-screen h-screen flex flex-col items-center justify-center">
+    <div className="relative w-screen h-screen flex flex-col items-center justify-center overflow-hidden">
       {/* ─── Architectural photo strip ─── */}
       <div className="absolute top-0 left-0 right-0 h-[clamp(180px,30vh,360px)] overflow-hidden animate-fade-in">
         <img
