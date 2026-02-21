@@ -7,6 +7,10 @@ export default function SignInPage() {
         Elsa Research
       </a>
       <SignIn
+        routing="path"
+        path="/portal/sign-in"
+        signUpUrl="/portal/sign-up"
+        fallbackRedirectUrl="/portal"
         appearance={{
           variables: {
             colorPrimary: "#3B2A4A",
