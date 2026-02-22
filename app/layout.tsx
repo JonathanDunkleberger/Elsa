@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Elsa Research",
   description:
     "Bespoke advisory and technological incubation for complex corporate actions.",
-  metadataBase: new URL("https://elsaresearch.co"),
+  metadataBase: new URL("https://elsaresearch.com"),
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -34,7 +34,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      signInUrl="/portal/sign-in"
+      signUpUrl="/portal/sign-up"
+      signInFallbackRedirectUrl="/portal"
+      signUpFallbackRedirectUrl="/portal"
+      afterSignOutUrl="/"
+    >
       <html lang="en">
         <body className="bg-cream text-plum font-serif antialiased">
           {children}
