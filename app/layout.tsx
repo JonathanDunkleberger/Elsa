@@ -47,9 +47,7 @@ export default function RootLayout({
   return (
     <ClerkProvider
       signInUrl="/portal/sign-in"
-      signUpUrl="/portal/sign-up"
       signInFallbackRedirectUrl="/portal"
-      signUpFallbackRedirectUrl="/portal"
       afterSignOutUrl="/"
     >
       <html lang="en" className={garamond.variable}>

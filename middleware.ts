@@ -4,7 +4,6 @@ const isProtectedRoute = createRouteMatcher(["/portal(.*)"]);
 const isPublicRoute = createRouteMatcher([
   "/",
   "/portal/sign-in(.*)",
-  "/portal/sign-up(.*)",
 ]);
 
 export default clerkMiddleware(async (auth, req) => {

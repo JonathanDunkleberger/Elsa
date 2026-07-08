@@ -1,12 +1,37 @@
-// Content-Security-Policy notes:
-// - script-src/connect-src must allow the Clerk frontend API
-//   (clerk.elsaresearch.co in production, *.clerk.accounts.dev in development).
-// - challenges.cloudflare.com is required by Clerk bot protection.
-// - 'unsafe-inline' script-src is required by Next.js without a nonce setup.
+// Clerk loads clerk-js and makes API calls against the "frontend API" domain
+// encoded in the publishable key: pk_(live|test)_<base64 of "<domain>$">.
+// Derive it here so the CSP always matches the instance actually in use.
+function clerkOrigin() {
+  const key = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
+  if (!key) return null;
+  try {
+    const domain = Buffer.from(key.replace(/^pk_(live|test)_/, ""), "base64")
+      .toString("utf8")
+      .replace(/\$$/, "");
+    if (/^[a-z0-9][a-z0-9.-]+$/i.test(domain)) return `https://${domain}`;
+  } catch {}
+  return null;
+}
+
+const isDev = process.env.NODE_ENV !== "production";
+
+const clerkSources = [
+  ...new Set(
+    [
+      clerkOrigin(),
+      "https://clerk.elsaresearch.co",
+      "https://clerk.elsaresearch.com",
+      "https://*.clerk.accounts.dev",
+    ].filter(Boolean)
+  ),
+].join(" ");
+
 const csp = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' https://clerk.elsaresearch.co https://*.clerk.accounts.dev https://challenges.cloudflare.com",
-  "connect-src 'self' https://clerk.elsaresearch.co https://*.clerk.accounts.dev",
+  // 'unsafe-inline' is required by Next.js without a nonce setup;
+  // 'unsafe-eval' is required by Next.js dev tooling only.
+  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} ${clerkSources} https://challenges.cloudflare.com`,
+  `connect-src 'self' ${clerkSources} https://clerk-telemetry.com`,
   "img-src 'self' data: https://img.clerk.com",
   "style-src 'self' 'unsafe-inline'",
   "font-src 'self' data:",

@@ -9,7 +9,6 @@ export default function SignInPage() {
       <SignIn
         routing="path"
         path="/portal/sign-in"
-        signUpUrl="/portal/sign-up"
         fallbackRedirectUrl="/portal"
         appearance={{
           variables: {
@@ -28,6 +27,8 @@ export default function SignInPage() {
             headerSubtitle: "font-sans text-sm",
             formButtonPrimary: "bg-plum hover:bg-plum-light text-cream font-sans text-xs uppercase tracking-label",
             footerActionLink: "text-plum-muted hover:text-plum",
+            // No sign-up path: hide the "Don't have an account?" row.
+            footerAction: { display: "none" },
           },
         }}
       />
