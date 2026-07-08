@@ -1,12 +1,23 @@
 import type { Metadata } from "next";
+import { EB_Garamond } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 
+const garamond = EB_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-garamond",
+});
+
+const description =
+  "Elsa Research advises on complex matters across jurisdictions and develops certain interests for its own account.";
+
 export const metadata: Metadata = {
   title: "Elsa Research",
-  description:
-    "Bespoke advisory and technological incubation for complex corporate actions.",
-  metadataBase: new URL("https://elsaresearch.com"),
+  description,
+  metadataBase: new URL("https://elsaresearch.co"),
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -20,10 +31,10 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
   openGraph: {
     title: "Elsa Research",
-    description:
-      "Bespoke advisory and technological incubation for complex corporate actions.",
+    description,
+    url: "https://elsaresearch.co",
+    siteName: "Elsa Research",
     type: "website",
-    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
   },
   robots: { index: true, follow: true },
 };
@@ -41,7 +52,7 @@ export default function RootLayout({
       signUpFallbackRedirectUrl="/portal"
       afterSignOutUrl="/"
     >
-      <html lang="en">
+      <html lang="en" className={garamond.variable}>
         <body className="bg-cream text-plum font-serif antialiased">
           {children}
         </body>

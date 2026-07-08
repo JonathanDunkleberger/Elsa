@@ -1,11 +1,11 @@
 <h1 align="center">Elsa Research</h1>
 
 <p align="center">
-Bespoke advisory and technological incubation for complex corporate actions.
+Independent counsel. Private undertakings.
 </p>
 
 <p align="center">
-  <a href="https://www.elsaresearch.com">elsaresearch.com</a>
+  <a href="https://elsaresearch.co">elsaresearch.co</a>
 </p>
 
 ---
@@ -18,5 +18,5 @@ Bespoke advisory and technological incubation for complex corporate actions.
 
 <p align="center">
   Next.js · TypeScript · Tailwind CSS<br/>
-  Privately held · Phoenix · Global
+  Privately held · London · Phoenix · Amsterdam · Paris · Zurich · Frankfurt · Hong Kong
 </p>

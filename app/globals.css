@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap");
-
 ::selection {
   background-color: #3b2a4a;
   color: #f4ede4;
@@ -20,45 +18,22 @@ body::before {
   z-index: 1;
 }
 
-/* Fade-in animation */
-@keyframes fadeUp {
+/* Single page fade-in: nothing moves after initial load */
+@keyframes pageIn {
   from {
     opacity: 0;
-    transform: translateY(14px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
-.animate-fade-up {
-  animation: fadeUp 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
-  opacity: 0;
+.animate-page-in {
+  animation: pageIn 0.7s ease-out both;
 }
 
-.delay-100 {
-  animation-delay: 0.1s;
-}
-.delay-300 {
-  animation-delay: 0.3s;
-}
-.delay-500 {
-  animation-delay: 0.5s;
-}
-.delay-800 {
-  animation-delay: 0.8s;
-}
-.delay-1000 {
-  animation-delay: 1s;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.animate-fade-in {
-  animation: fadeIn 2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
-  opacity: 0;
+@media (prefers-reduced-motion: reduce) {
+  .animate-page-in {
+    animation: none;
+  }
 }

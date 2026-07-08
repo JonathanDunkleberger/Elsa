@@ -23,7 +23,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        serif: ['"EB Garamond"', "Georgia", '"Times New Roman"', "serif"],
+        serif: ["var(--font-garamond)", "Georgia", '"Times New Roman"', "serif"],
         sans: ['"Helvetica Neue"', "Arial", "sans-serif"],
       },
       letterSpacing: {

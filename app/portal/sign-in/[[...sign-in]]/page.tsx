@@ -20,7 +20,7 @@ export default function SignInPage() {
             colorInputBackground: "#F4EDE4",
             colorInputText: "#3B2A4A",
             borderRadius: "0.25rem",
-            fontFamily: "'EB Garamond', Georgia, serif",
+            fontFamily: "var(--font-garamond), Georgia, serif",
           },
           elements: {
             card: "shadow-none border border-plum/10",
