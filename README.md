@@ -5,7 +5,7 @@ Independent counsel. Private undertakings.
 </p>
 
 <p align="center">
-  <a href="https://elsaresearch.co">elsaresearch.co</a>
+  <a href="https://elsaresearch.com">elsaresearch.com</a>
 </p>
 
 ---

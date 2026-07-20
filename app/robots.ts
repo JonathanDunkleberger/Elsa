@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/portal",
     },
-    sitemap: "https://elsaresearch.co/sitemap.xml",
+    sitemap: "https://elsaresearch.com/sitemap.xml",
   };
 }

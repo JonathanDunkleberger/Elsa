@@ -17,7 +17,7 @@ const description =
 export const metadata: Metadata = {
   title: "Elsa Research",
   description,
-  metadataBase: new URL("https://elsaresearch.co"),
+  metadataBase: new URL("https://elsaresearch.com"),
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Elsa Research",
     description,
-    url: "https://elsaresearch.co",
+    url: "https://elsaresearch.com",
     siteName: "Elsa Research",
     type: "website",
   },
