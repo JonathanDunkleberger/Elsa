@@ -8,15 +8,15 @@ module.exports = {
     extend: {
       colors: {
         plum: {
-          DEFAULT: "#3B2A4A",
-          light: "#5A4A6A",
-          muted: "#7A6B8A",
-          faint: "#9A8BA8",
+          DEFAULT: "#2E2A32",
+          light: "#4A4550",
+          muted: "#6B6570",
+          faint: "#8A8490",
         },
         cream: {
-          DEFAULT: "#F4EDE4",
-          dark: "#E8DFD3",
-          light: "#FAF7F3",
+          DEFAULT: "#F4F1ED",
+          dark: "#E8E4DE",
+          light: "#FAF8F5",
         },
         slate: {
           blue: "#6B7FA3",

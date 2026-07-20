@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 ::selection {
-  background-color: #3b2a4a;
-  color: #f4ede4;
+  background-color: #2e2a32;
+  color: #f4f1ed;
 }
 
 /* Subtle noise texture via pseudo-element */

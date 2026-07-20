@@ -1,90 +1,56 @@
-import { LockIcon } from "./components/icons";
-
-function Spread({ text, className }: { text: string; className: string }) {
-  return (
-    <span className={`flex justify-between leading-none ${className}`}>
-      {text.split("").map((c, i) => (
-        <span key={i}>{c}</span>
-      ))}
-    </span>
-  );
-}
-
 export default function Home() {
   return (
-    <div className="relative w-full min-h-[100svh] flex flex-col items-center justify-center overflow-hidden animate-page-in">
-      {/* ─── Architectural photo strip — muted archival duotone ─── */}
-      <div className="absolute top-0 left-0 right-0 h-[clamp(160px,28vh,340px)] overflow-hidden">
+    <div className="relative flex min-h-[100svh] w-full flex-col items-center overflow-hidden bg-cream animate-page-in">
+      {/* Versailles header — fades into parchment */}
+      <header className="relative w-full shrink-0 h-[clamp(180px,32vh,380px)] overflow-hidden">
         <img
-          src="/strip.jpg"
+          src="/versailles.jpg"
           alt=""
           role="presentation"
-          className="w-full h-full object-cover object-center grayscale contrast-[0.85] brightness-110"
+          className="h-full w-full object-cover object-[center_35%]"
           loading="eager"
         />
-        {/* Duotone: colorize the grayscale image with plum, deepen, veil */}
-        <div className="absolute inset-0 bg-plum mix-blend-color pointer-events-none" />
-        <div className="absolute inset-0 bg-plum/15 mix-blend-multiply pointer-events-none" />
-        <div className="absolute inset-0 bg-cream/25 pointer-events-none" />
-        {/* Gradient fade: strip → cream */}
-        <div className="absolute bottom-0 left-0 right-0 h-[65%] bg-gradient-to-t from-cream via-cream/85 to-transparent pointer-events-none" />
-      </div>
+        <div
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-[70%] bg-gradient-to-t from-cream via-cream/80 to-transparent"
+          aria-hidden="true"
+        />
+      </header>
 
-      {/* Center content */}
-      <main className="text-center px-6 sm:px-8 max-w-2xl mt-[clamp(24px,5vh,70px)] pb-20 relative z-10">
-        {/* The wordmark lockup */}
-        <h1
-          aria-label="Elsa Research"
-          className="mx-auto w-[min(272px,76vw)] sm:w-[312px] text-plum font-serif font-normal"
-        >
-          <span aria-hidden="true" className="block">
-            <span className="block border-t border-plum/40" />
-            <Spread
-              text="ELSA"
-              className="pt-[0.32em] text-[5.4rem] sm:text-[6.2rem]"
-            />
-            <Spread
-              text="RESEARCH"
-              className="pt-[0.72em] pb-[0.9em] text-[1.35rem] sm:text-[1.55rem]"
-            />
-            <span className="block border-t border-plum/40" />
-          </span>
+      {/* Centered lockup */}
+      <main className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 pb-24 pt-4 text-center sm:px-8">
+        <h1 className="font-serif font-normal text-plum text-[1.65rem] tracking-[0.25em] sm:text-[2rem] pl-[0.25em]">
+          Elsa Research
         </h1>
-        <p className="pt-4 text-center font-sans text-[0.62rem] tracking-[0.35em] pl-[0.35em] text-plum-muted">
-          PRIVATELY HELD
-        </p>
 
-        {/* Tagline */}
-        <p className="font-serif italic font-light text-plum-light leading-relaxed tracking-subtle mt-12 mb-7 text-base sm:text-lg">
-          Independent counsel. Private undertakings.
-        </p>
+        <div className="mt-6 mb-7 h-px w-10 bg-plum/35" aria-hidden="true" />
 
-        {/* Mandate */}
-        <p className="font-serif font-normal text-plum-muted leading-loose tracking-subtle mb-12 mx-auto max-w-md text-sm sm:text-[0.9375rem]">
-          Elsa Research advises on complex matters across jurisdictions and
-          develops certain interests for its own account. The firm does not
-          publish its clients, its mandates, or its results.
+        <p className="max-w-md font-serif italic font-normal text-plum/80 text-[0.95rem] leading-relaxed tracking-wide sm:text-base">
+          Bespoke advisory and technological incubation for complex corporate
+          actions.
         </p>
-
-        {/* Client Portal — the single interactive element */}
-        <a
-          href="/portal"
-          className="group inline-flex items-center gap-1.5 text-xs font-sans font-normal text-plum-muted tracking-label uppercase transition-all duration-400 hover:text-plum border-b border-transparent hover:border-plum pb-0.5"
-        >
-          <LockIcon />
-          Client Portal
-        </a>
       </main>
 
-      {/* Footer */}
-      <footer className="absolute bottom-0 left-0 right-0 px-6 sm:px-8 py-6 flex flex-col items-center gap-2 sm:flex-row sm:justify-between sm:gap-4">
-        <span className="text-[0.65rem] font-sans font-light text-plum-faint tracking-fine uppercase whitespace-nowrap">
-          © {new Date().getFullYear()} Elsa Research. Privately Held.
+      {/* Footer links — small, uppercase, spaced */}
+      <nav
+        aria-label="Primary"
+        className="absolute bottom-0 left-0 right-0 z-10 flex items-center justify-center gap-6 px-6 py-8 sm:gap-10"
+      >
+        <a
+          href="mailto:inquiries@elsaresearch.co"
+          className="font-serif text-[0.65rem] uppercase tracking-[0.22em] text-plum/70 transition-opacity duration-300 hover:opacity-100 hover:text-plum"
+        >
+          Inquiries
+        </a>
+        <span className="text-plum/25 text-[0.5rem]" aria-hidden="true">
+          ·
         </span>
-        <span className="text-[0.65rem] font-sans font-light text-plum-faint tracking-fine uppercase text-center leading-relaxed">
-          London&ensp;·&ensp;Phoenix&ensp;·&ensp;Amsterdam&ensp;·&ensp;Paris&ensp;·&ensp;Zurich&ensp;·&ensp;Frankfurt&ensp;·&ensp;Hong&nbsp;Kong
-        </span>
-      </footer>
+        <a
+          href="/portal"
+          className="font-serif text-[0.65rem] uppercase tracking-[0.22em] text-plum/70 transition-opacity duration-300 hover:opacity-100 hover:text-plum"
+        >
+          Client Portal
+        </a>
+      </nav>
     </div>
   );
 }

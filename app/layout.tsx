@@ -12,7 +12,7 @@ const garamond = EB_Garamond({
 });
 
 const description =
-  "Elsa Research advises on complex matters across jurisdictions and develops certain interests for its own account.";
+  "Bespoke advisory and technological incubation for complex corporate actions.";
 
 export const metadata: Metadata = {
   title: "Elsa Research",
