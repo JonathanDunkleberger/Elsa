@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <div className="relative flex min-h-[100svh] w-full flex-col items-center overflow-hidden bg-cream animate-page-in">
-      {/* Versailles header — absolute so lockup can center on the full page */}
+      {/* Versailles header — absolute so lockup can sit in the page center */}
       <header className="pointer-events-none absolute top-0 left-0 right-0 z-0 h-[clamp(180px,32vh,380px)] overflow-hidden">
         <img
           src="/versailles.jpg"
@@ -16,8 +16,8 @@ export default function Home() {
         />
       </header>
 
-      {/* One composition: wordmark → mandate → portal */}
-      <main className="relative z-10 flex min-h-[100svh] w-full flex-col items-center justify-center px-6 pb-20 pt-8 text-center sm:px-8 -translate-y-[4vh] sm:-translate-y-[5vh]">
+      {/* One composition: wordmark → mandate → portal — optically centered, clear of the fade */}
+      <main className="relative z-10 flex min-h-[100svh] w-full flex-col items-center justify-center px-6 pb-24 pt-[clamp(48px,10vh,96px)] text-center sm:px-8 translate-y-[3vh] sm:translate-y-[4vh]">
         <h1 className="font-serif font-normal text-plum text-[2rem] tracking-[0.25em] sm:text-[2.45rem] pl-[0.25em]">
           Elsa Research
         </h1>
@@ -47,11 +47,14 @@ export default function Home() {
         </a>
       </main>
 
-      {/* Jurisdictions — quiet legitimacy at the foot */}
-      <footer className="absolute bottom-0 left-0 right-0 z-10 px-6 py-6 sm:px-8">
-        <p className="text-center font-serif text-[0.6rem] uppercase tracking-[0.2em] text-plum/35 leading-relaxed">
+      {/* Letterhead footer — quiet legitimacy without crowding the center */}
+      <footer className="absolute bottom-0 left-0 right-0 z-10 flex flex-col items-center gap-2 px-6 py-5 sm:flex-row sm:justify-between sm:gap-4 sm:px-10">
+        <span className="font-serif text-[0.6rem] uppercase tracking-[0.18em] text-plum/30 whitespace-nowrap">
+          © {new Date().getFullYear()} Elsa Research
+        </span>
+        <span className="text-center font-serif text-[0.6rem] uppercase tracking-[0.18em] text-plum/30 leading-relaxed sm:text-right">
           London&ensp;·&ensp;Phoenix&ensp;·&ensp;Amsterdam&ensp;·&ensp;Paris&ensp;·&ensp;Zurich&ensp;·&ensp;Frankfurt&ensp;·&ensp;Hong&nbsp;Kong
-        </p>
+        </span>
       </footer>
     </div>
   );
